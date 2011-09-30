@@ -1,0 +1,26 @@
+PortSystem		1.0
+name			czmq
+version			1.1.0
+categories		sysutils net
+platforms		darwin
+maintainers		oddbit.com:lars
+
+description		High-level C binding for 0MQ.
+long_description	czmq is a high-level C binding for 0MQ.  It wraps the \
+			ØMQ core API in semantics that are natural and lead to \
+			shorter, more readable applications, and it hides the \
+			differences between version of 0MQ.
+
+homepage		http://czmq.zeromq.org/
+
+
+master_sites        	http://download.zeromq.org/
+distname            	czmq-${version}
+
+checksums		md5     8b057b08e34212138e81d3cd6dff127b \
+			sha1    e4e24bce5f98e55a090b10d5461987826f543411
+
+universal_variant	yes
+
+depends_lib		port:zmq
+
