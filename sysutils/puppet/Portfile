@@ -1,0 +1,39 @@
+PortSystem		1.0
+name			puppet
+version			2.7.5
+categories		sysutils
+platforms		darwin
+maintainers		oddbit.com:lars
+
+description		An automated administrative engine for your *nix systems.
+long_description	Puppet, an automated administrative engine for your *nix systems, performs administrative tasks (such as adding users, installing packages, and updating server configurations) based on a centralized specification.
+
+homepage		http://puppetlabs.com/
+
+
+master_sites        	http://puppetlabs.com/downloads/puppet/
+distname            	puppet-${version}
+
+checksums		md5 bd25f0e472c409497e0a4f648eab48bb \
+			sha1 3531629e01c06dff8d99e6d72ac8a5705f636326
+
+universal_variant	yes
+
+depends_lib		port:facter \
+			port:ruby
+
+use_configure       no
+build               {}
+test.run            no
+destroot.cmd        ${prefix}/bin/ruby ${worksrcpath}/install.rb \
+                    --destdir=${destroot}
+
+set puppetuser      puppet
+set puppetgroup     puppet
+
+pre-destroot        {
+                        addgroup ${puppetgroup}
+                        set gid [existsgroup ${puppetgroup}]
+                        adduser ${puppetuser} gid=${gid} realname=Puppet\ User
+                    }
+
