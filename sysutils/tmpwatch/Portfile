@@ -13,6 +13,7 @@ homepage		https://fedorahosted.org/tmpwatch/
 
 master_sites        	https://fedorahosted.org/releases/t/m/tmpwatch/
 distname            	tmpwatch-${version}
+use_bzip2		yes
 
 checksums		md5 ec9cf26552582e4f106e97b0104ffc9c \
 			sha1 6b014979af44aa1550b724f4c0d94fdc50e50b37
