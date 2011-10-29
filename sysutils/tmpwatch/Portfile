@@ -1,0 +1,21 @@
+PortSystem		1.0
+name			tmpwatch
+version			2.10.3
+categories		sysutils
+platforms		darwin
+maintainers		oddbit.com:lars
+
+description		Recursively clean up directories.
+long_description	The tmpwatch utility recursively searches through specified directories and removes files which have not been accessed in a specified period of time.  tmpwatch is normally used to clean up directories which are used for temporarily holding files (for example, /tmp).
+
+homepage		https://fedorahosted.org/tmpwatch/
+
+
+master_sites        	https://fedorahosted.org/releases/t/m/tmpwatch/
+distname            	tmpwatch-${version}
+
+checksums		md5 ec9cf26552582e4f106e97b0104ffc9c \
+			sha1 6b014979af44aa1550b724f4c0d94fdc50e50b37
+
+universal_variant	yes
+
